@@ -1,0 +1,144 @@
+html{
+    height: 100%;
+    font-family: 'Russo One', sans-serif;
+}
+
+body {
+    height: 100%;
+}
+
+header {
+    height: 20%;
+    background-color: black;
+    display: flex;
+    color: #EEEEEE;
+    align-items: center;
+    font-size: 50px;
+    justify-content: space-around;
+}
+
+main {
+    background-color: #262626;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    width: 90%;
+    height: 90%;
+    background-color: black;
+    border: 2px black;
+    border-radius: 15px;
+    font-size: 30px;
+    max-width: 90%;
+}
+
+.image_icon {
+    width: 15%;
+}
+
+.image_adidas {
+    width: 8%;
+    margin: 2.5%;
+}
+
+form {
+    max-height: 90%;
+    max-width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    height: 20%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    color: #fff;
+}
+
+ul li {
+    display: inline;
+    margin: 0 0 0 30px;
+}
+ a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+ .list-items {
+     height: 30px;
+ }
+
+ .div-social-media {
+     padding-right: 75px;
+ }
+
+.label-form {
+    color: #a6a6a6;
+    margin: 130px;
+    display: flex;
+    background-color: #262626;
+    align-items: center;
+    justify-content: center;
+    border: 5px dashed #a6a6a6;
+    border-radius: 10px;
+    height: 300px;
+    max-height: 300px;
+    padding: 10px 80px;
+    cursor: pointer;
+ }
+
+.label-form:hover {
+    background-color: #8a8989;
+    color: #262626;
+    border: 5px dashed #262626;
+
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.botao-form {
+    font-size: 25px;
+    height: 30%;
+    display: flex;
+    padding: 20px;
+    color: #a6a6a6;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: #262626;
+    font-family: 'Russo One', sans-serif;
+    cursor: pointer;
+    float: revert;
+    margin: 25px;
+}
+
+.botao-form:hover {
+    background-color: #069be7;
+    color: #262626;
+    border: 1px solid black;
+}
+
+.div-buttons {
+    display: flex;
+    flex-direction: column;
+}
