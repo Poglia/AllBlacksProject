@@ -66,3 +66,19 @@ function str_value($value)
 {
   return ($value !== '' && $value !== null && $value !== false);
 }
+
+function ifnull()
+{
+    if (!func_num_args()) return null;
+
+    $args = func_get_args();
+
+    foreach ($args as $value)
+    {
+        if ((!is_object($value) && !is_array($value)) && strtoupper($value) === "NULL") continue;
+
+        if (str_value($value)) return $value;
+    }
+
+    return null;
+}

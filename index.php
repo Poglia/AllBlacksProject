@@ -1,8 +1,7 @@
 <?php
 include "./helper/helpers.php";
 
-ppp($_REQUEST);
-
+$_REQUEST["id"] = "default";
 
 ?>
 
@@ -28,7 +27,8 @@ ppp($_REQUEST);
       <main>
         <div class="container">
           <?php
-          if ($_REQUEST["id"] != "info") {
+          if ($_REQUEST["id"] != "info")
+          {
           ?>
             <form action="interpretador.php" method="POST" enctype="multipart/form-data">
 
@@ -38,7 +38,6 @@ ppp($_REQUEST);
                 <input class="botao-form" type="submit" alt="Update" value="Update">
                 <input class="botao-form" type="button" alt="Update" value="Send Email">
                 <a href="?id=info">
-                <input class="botao-form" type="button" alt="Update" value="How To Use">
                 <input class="botao-form" type="button" alt="Update" value="How To Use">
                 </a>
               </div>

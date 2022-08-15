@@ -1,24 +1,29 @@
 <?php
- include "./helper/helpers.php";
-// require_once './php-excel-reader-2.23/excel_reader2.php';
+  include "./helper/helpers.php";
+  require 'vendor/autoload.php';
+  use PhpOffice\PhpSpreadsheet\Spreadsheet;
+  use PhpOffice\PhpSpreadsheet\IOFactory;
+  use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
- $fileTable  = $_FILES["xlsx"];
- $fileUpdate = $_FILES["xml"];
+  $fileTable  = $_FILES["xlsx"];
+  $fileUpdate = $_FILES["xml"];
 
- $typeFileTable  = strstr($fileTable["name"],  ".");
- $typeFileUpdate = strstr($fileUpdate["name"], ".");
+  $typeFileTable  = strstr($fileTable["name"],  ".");
+  $typeFileUpdate = strstr($fileUpdate["name"], ".");
 
-// if (!in_array($typeFileTable, [".xlsx", ".xls"]) || $typeFileUpdate != ".xml")
-// {
-//    echo ('Alguma das extensaoes nao batem com as necessarias');
-//   exit();
-// }
-//
+  $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader("Xlsx");
+  $sheet = "";
 
- ppp($fileTable);
+  $spreadsheet = $reader->load($_FILES["xlsx"]["tmp_name"]);
+  $sheet_count = $spreadsheet->getSheetCount();
 
- if (!empty($_FILES["xlsx"]["tmp_name"]))
- {
+  $data = $spreadsheet->getActiveSheet()->toArray();
 
+  try {
+    $conection = new Config\Connection();
+    $conection->connect();
+    echo 'A connection to the PostgreSQL database sever has been established successfully.';
+  } catch (\PDOException $e) {
+    echo $e->getMessage();
+  }
 
- }
