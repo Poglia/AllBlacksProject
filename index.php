@@ -1,10 +1,3 @@
-<?php
-include "./helper/helpers.php";
-
-$_REQUEST["id"] = "default";
-
-?>
-
 <!doctype html>
   <html lang="en">
     <head>
@@ -26,33 +19,17 @@ $_REQUEST["id"] = "default";
       </header>
       <main>
         <div class="container">
-          <?php
-          if ($_REQUEST["id"] != "info")
-          {
-          ?>
-            <form action="interpretador.php" method="POST" enctype="multipart/form-data">
-
-              <label class="label-form">ADD TO FAN TABLE<input type="file" name="xlsx" ></label>
-              <label class="label-form">ADD UPDATE FILE <input type="file" name="xml" ></label>
+            <form action="exe_atualizar_arquivo.php" method="POST" enctype="multipart/form-data">
+              <label id="arquivo" class="label-form">ADD UPDATE FILE <input type="file" name="arquivo" required></label>
               <div class="div-buttons">
                 <input class="botao-form" type="submit" alt="Update" value="Update">
                 <input class="botao-form" type="button" alt="Update" value="Send Email">
-                <a href="?id=info">
-                <input class="botao-form" type="button" alt="Update" value="How To Use">
+                <a href="./clientes.xlsx">
+                <input class="botao-form" type="button" alt="Update" value=" Download ">
                 </a>
               </div>
             </form>
-          <?php } else { ?>
-          <h1>HOW TO USE - Em Portugues</h1>
-            <br>
-            <p>Botão UPDATE:
-              Atualiza os dados da tabela inserida com o arquivo XML
-             </p>
-            <a href="/">
-              <input class="botao-form" type="button" alt="Update" value="BACK">
-            </a>
           </div>
-          <?php } ?>
       </main>
       <footer>
         <img src="src/image/adidas.png" class="image_adidas" alt="some text">
@@ -90,5 +67,15 @@ $_REQUEST["id"] = "default";
         </div>
       </footer>
       <script src="https://kit.fontawesome.com/1f678b4511.js" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $('form').submit(function (event) {
+              // event.preventDefault();
+              var file = document.getElementById('arquivo');
+              console.log(file);
+          })
+        })
+      </script>
     </body>
   </html>
