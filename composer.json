@@ -13,6 +13,8 @@
         "ext-simplexml": "*"
     },
     "autoload": {
-      "classmap": ["Config"]
+      "classmap": [
+          "config"
+      ]
     }
 }

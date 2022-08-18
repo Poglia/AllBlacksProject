@@ -8,29 +8,29 @@
   try {
     $connect = new Config\Connection();
     $connect->connect();
-//    echo 'A connection to the PostgreSQL database sever has been established successfully.';
+    //echo 'A connection to the PostgreSQL database sever has been established successfully.';
   } catch (\PDOException $e) {
-//    echo $e->getMessage();
+      //echo $e->getMessage();
   }
 
   if (str_contains($_FILES["arquivo"]["name"], "xml"))
   {
     $dadosXml = simplexml_load_file($_FILES["arquivo"]["tmp_name"]);
+
     foreach ($dadosXml as $key => $value)
     {
-      ppp($value["nome"]);
+      $arrData = prepareArrayData($value);
+      $connect->updateOrInsertFromXml($arrData);
     }
-//    ppp('Arquivo XML');
-//    ppp($_FILES);
   }
   else if (str_contains($_FILES["arquivo"]["name"], "xlsx") || str_contains($_FILES["arquivo"]["name"], "xls"))
   {
+    $connect->resetData();
+
     $reader      = IOFactory::createReader("Xlsx");
     $spreadsheet = $reader->load($_FILES["arquivo"]["tmp_name"]);
     $sheet_count = $spreadsheet->getSheetCount();
     $data        = $spreadsheet->getActiveSheet()->toArray();
-
-    $connect->resetData();
 
     foreach ($data as $key => $value)
     {
@@ -53,8 +53,5 @@
   else
     echo "Arquivo não Suportado";
 
-
-
-
-
+  header('location: /');
 

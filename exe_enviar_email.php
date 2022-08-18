@@ -17,7 +17,7 @@
      <p><b>E-mail: </b>$dsEmail</p>
      <p><b>Mensagem: </b>$dsMensagem</p>
      <p>Este e-mail foi enviado em <b>$dtEnvio</b> às <b>$hrEnvio</b></p>
-HTML;
+  HTML;
 
   $headers  = "MIME-Version: 1.0\n";
   $headers .= "Content-type: text/html; charset=iso-8859-1\n";
@@ -35,4 +35,4 @@ HTML;
     mail($dsEmailTorcedor, $dsAssunto, $dsArquivo, $headers);
   }
 
-  echo "<meta http-equiv='refresh'>";
+  header('location: /');

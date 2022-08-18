@@ -19,12 +19,12 @@
       </header>
       <main>
         <div class="container">
-            <form action="exe_atualizar_arquivo.php" method="POST" enctype="multipart/form-data">
-              <label id="arquivo" class="label-form">ADD UPDATE FILE <input type="file" name="arquivo" required></label>
+          <form action="exe_atualizar_arquivo.php" method="POST" enctype="multipart/form-data">
+            <label id="arquivo" class="label-form">ADD UPDATE FILE <input type="file" name="arquivo" required></label>
               <div class="div-buttons">
                 <input class="botao-form" type="submit" alt="Update" value="Update">
                 <input class="botao-form" type="button" alt="Update" value="Send Email">
-                <a href="./clientes.xlsx">
+                <a href="torcedores.xlsx">
                 <input class="botao-form" type="button" alt="Update" value=" Download ">
                 </a>
               </div>
@@ -67,15 +67,5 @@
         </div>
       </footer>
       <script src="https://kit.fontawesome.com/1f678b4511.js" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script>
-        $(document).ready(function () {
-          $('form').submit(function (event) {
-              // event.preventDefault();
-              var file = document.getElementById('arquivo');
-              console.log(file);
-          })
-        })
-      </script>
     </body>
   </html>

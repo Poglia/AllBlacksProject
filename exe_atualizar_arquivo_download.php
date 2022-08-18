@@ -33,4 +33,6 @@
   }
 
   $sheet->fromArray($cells, null, "A1");
-  $writer->save("clientes.xlsx");
+  $writer->save("torcedores.xlsx");
+
+  header('location: /');
