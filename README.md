@@ -1,6 +1,6 @@
-# 🏉 Migração Dados de Torcedores AllBlacks para um ambiente Remoto :pushpin:
+#  Migração Dados de Torcedores 🏉 AllBlacks 🏉 para um ambiente Remoto 
 
-## 🔔 Construído com
+## 🛠 Construído com
 
 * [PHP](https://www.php.net/) - A linguagem usada
 * [Composer](https://getcomposer.org/) - Gerenciador de Pacotes
@@ -47,7 +47,7 @@ dados.xml     : referente ao arquivo de atualização
 php-example.ini   : caso o projeto nao rode com o [ *php.ini* ] da sua máquina  
 
 desafioP21.pdf :  Desafio solicitado pela empresa
-## 🧧 Configurando o Composer
+## ⚙ Configurando o Composer
 
 Na pasta do projeto ja com o composer instalado na sua máquina ou ambiente virtual
 ```
@@ -83,7 +83,7 @@ CREATE TABLE torcedores (
 ```
 
 
-## ✏ Funcionamento
+## ✒ Funcionamento
 
 O projeto le 2 tipos de arquivos (xlsx) e (xml)!
 
