@@ -40,13 +40,11 @@ Clone o projeto para a sua maquina e crie um novo banco de dados postgres
 
 ### Esse projeto possui na pasta [arquivos] os modelos:
 
-clientes.xlsx : referente a planilha excel de iniciação;
+* clientes.xlsx - referente a planilha excel de iniciação;
+* dados.xml     - referente ao arquivo de atualização
+* php-example.ini - [ *php.ini* ] usado para desenvolver  
+* desafioP21.pdf -  Desafio solicitado pela empresa
 
-dados.xml     : referente ao arquivo de atualização
-
-php-example.ini   : caso o projeto nao rode com o [ *php.ini* ] da sua máquina  
-
-desafioP21.pdf :  Desafio solicitado pela empresa
 ## ⚙ Configurando o Composer
 
 Na pasta do projeto ja com o composer instalado na sua máquina ou ambiente virtual
