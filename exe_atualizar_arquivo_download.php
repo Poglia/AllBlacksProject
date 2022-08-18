@@ -1,8 +1,10 @@
 <?php
   require 'vendor/autoload.php';
+
   use Config\Connection;
   use PhpOffice\PhpSpreadsheet\Spreadsheet;
   use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
   ini_set('default_charset','ISO-8859-1');
 
   $spreadsheet = new Spreadsheet();

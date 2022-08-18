@@ -19,7 +19,7 @@
     $arrData["cidade"]    = removeSingleQuotes($arrData["cidade"]);
     $arrData["cidade"]    = removeSingleQuotes($arrData["cidade"]);
     $arrData["telefone"]  = preg_replace("/[^0-9]/","",  $arrData["telefone"]);
-    $arrData["ativo"]  = ($arrData["ativo"] == 1) ? 1 : 0;
+    $arrData["ativo"]     = ($arrData["ativo"] == 1) ? 1 : 0;
 
     return $arrData;
   }

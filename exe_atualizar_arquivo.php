@@ -54,4 +54,3 @@
     echo "Arquivo não Suportado";
 
   header('location: /');
-

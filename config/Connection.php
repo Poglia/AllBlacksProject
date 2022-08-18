@@ -44,6 +44,7 @@
                                       FROM torcedores");
 
         $sql->execute();
+
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -55,6 +56,7 @@
                                    WHERE id_ativo = 1");
 
       $sql->execute();
+
       return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -62,8 +64,8 @@
     {
       $pdo = $this->connect();
       $sql = $pdo->prepare("DELETE FROM torcedores WHERE TRUE;");
-      $sql->execute();
 
+      $sql->execute();
     }
 
     public function updateOrInsertFromXml($arrValues)
@@ -71,7 +73,8 @@
       $pdo        = $this->connect();
       $idTorcedor = self::verifyExistenceByDocument($arrValues["documento"], $pdo);
 
-      try {
+      try
+      {
         if ($idTorcedor == "")
         {
           $sql = <<<SQL

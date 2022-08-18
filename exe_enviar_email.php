@@ -13,10 +13,10 @@
   $hrEnvio = date('H:i:s');
 
   $dsArquivo = <<<HTML
-     <p><b>Nome: </b>$nmEmpresa</p>
-     <p><b>E-mail: </b>$dsEmail</p>
-     <p><b>Mensagem: </b>$dsMensagem</p>
-     <p>Este e-mail foi enviado em <b>$dtEnvio</b> às <b>$hrEnvio</b></p>
+    <p><b>Nome: </b>$nmEmpresa</p>
+    <p><b>E-mail: </b>$dsEmail</p>
+    <p><b>Mensagem: </b>$dsMensagem</p>
+    <p>Este e-mail foi enviado em <b>$dtEnvio</b> às <b>$hrEnvio</b></p>
   HTML;
 
   $headers  = "MIME-Version: 1.0\n";
