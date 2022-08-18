@@ -37,9 +37,9 @@
       if ($key == 0)
         continue;
 
-      $value[0] = retirarAspasSimples($value[0]);
-      $value[5] = retirarAspasSimples($value[5]);
-      $value[3] = retirarAspasSimples($value[3]);
+      $value[0] = removeSingleQuotes($value[0]);
+      $value[5] = removeSingleQuotes($value[5]);
+      $value[3] = removeSingleQuotes($value[3]);
       $value[9] = ($value[9] == "SIM") ? 1 : 0;
 
       $sql = <<<SQL
