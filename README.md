@@ -1,16 +1,16 @@
-# MigraÁ„o Torcedores - AllBlacks para um ambiente Remoto
+# üèâ Migra√ß√£o Dados de Torcedores AllBlacks para um ambiente Remoto :pushpin:
 
-## ?? ConstruÌdo com
+## üîî Constru√≠do com
 
 * [PHP](https://www.php.net/) - A linguagem usada
 * [Composer](https://getcomposer.org/) - Gerenciador de Pacotes
 * [PostgreSQL](https://www.postgresql.org/) - Banco de Dados
 
-## ? IntroduÁ„o
+## üì∫ Introdu√ß√£o
 
-Este È um programa fictÌcio de armazenamento de dados de um grupo de torcedores de um time de rugby feito em PHP + Composer e com a ajuda de algumas bibliotecas como: phpoffice/phpspreadsheet e ext-pdo
+Este √© um programa fict√≠cio de armazenamento de dados de um grupo de torcedores de um time de rugby feito em PHP + Composer e com a ajuda de algumas bibliotecas como: phpoffice/phpspreadsheet e ext-pdo
 
-O programa Le uma Planilha Excel(xlsx) que È considerada a base local dos torcedores e arquivos de atualizaÁ„o(xml) desses torcedores.
+O programa Le uma Planilha Excel(xlsx) que √© considerada a base local dos torcedores e arquivos de atualiza√ß√£o(xml) desses torcedores.
 
 Armazenando esses dados em um servidor localhost via PostgreSQL - Alem disso possui a utilidade de Envio de Email para os torcedores ainda ativos
 
@@ -19,7 +19,7 @@ Foi feito um pequeno front-end para manter o mesmo universo do site do AllBlacks
 O software ainda tem alguns pequenos bugs mas o objetivo final foi cumprido - Teste Avaliativo empresa P21 Sistemas 
 
 
-### ? PrÈ-requisitos
+### üîß Pr√©-requisitos
 
 ```
 PHP 8 Ou superior
@@ -27,45 +27,45 @@ PostgreSQL
 Composer
 ```
 
-A menos que use um container Docker para a aplicaÁ„o sugiro trocar seu [  *php.ini* ] pelo comitado no projeto para que funcione via servidor embutido do PHP
+A menos que use um container Docker para a aplica√ß√£o sugiro trocar seu [  *php.ini* ] pelo comitado no projeto para que funcione via servidor embutido do PHP
 ```
 php -S localhost:5432
 ```
 
-## ? ComeÁando
+## üìå Come√ßando
 
 Clone o projeto para a sua maquina e crie um novo banco de dados postgres
 
-## ? Arquivos
+## üìú Arquivos
 
 ### Esse projeto possui na pasta [arquivos] os modelos:
 
-clientes.xlsx : referente a planilha excel de iniciaÁ„o;
+clientes.xlsx : referente a planilha excel de inicia√ß√£o;
 
-dados.xml     : referente ao arquivo de atualizaÁ„o
+dados.xml     : referente ao arquivo de atualiza√ß√£o
 
-php-example.ini   : caso o projeto nao rode com o [ *php.ini* ] da sua m·quina  
+php-example.ini   : caso o projeto nao rode com o [ *php.ini* ] da sua m√°quina  
 
 desafioP21.pdf :  Desafio solicitado pela empresa
-## ?? Configurando o Composer
+## üßß Configurando o Composer
 
-Na pasta do projeto ja com o composer instalado na sua m·quina ou ambiente virtual
+Na pasta do projeto ja com o composer instalado na sua m√°quina ou ambiente virtual
 ```
 composer install
 ```
-Esse comando vai ler o [ * composer.json * ] e instalar as dependÍncias necess·rias para o projeto rodar   
+Esse comando vai ler o [ * composer.json * ] e instalar as depend√™ncias necess√°rias para o projeto rodar   
 
 
-## ? ConfiguraÁ„o Banco
+## üìö Configura√ß√£o Banco
 
-Adicione as informaÁıes sobre seu BD no arquivo: [ *.env-example* ] 
-Essas informaÁıes ser„o usadas em Config/Connection.php.
+Adicione as informa√ß√µes sobre seu BD no arquivo: [ *.env-example* ] 
+Essas informa√ß√µes ser√£o usadas em Config/Connection.php.
 
-ApÛs isso troque o nome do arquivo para [ *.env* ] e suas variaveis do projeto estar„o configuradas logo seu banco de dados ja est· lincado com a aplicaÁ„o.
+Ap√≥s isso troque o nome do arquivo para [ *.env* ] e suas variaveis do projeto estar√£o configuradas logo seu banco de dados ja est√° lincado com a aplica√ß√£o.
 
-Para testar entre em [ * exe_atualizar_arquivo.php * ]: e descomente os ECHOs de conex„o, e com o server rodando clique no bot„o UPDATE para ver qual das mensagens aparece.
+Para testar entre em [ * exe_atualizar_arquivo.php * ]: e descomente os ECHOs de conex√£o, e com o server rodando clique no bot√£o UPDATE para ver qual das mensagens aparece.
 
-ApÛs isso pode rodar a query para a criaÁ„o da tabela que È usada no projeto
+Ap√≥s isso pode rodar a query para a cria√ß√£o da tabela que √© usada no projeto
 ```
 CREATE TABLE torcedores (
     id_torcedor serial PRIMARY KEY,
@@ -83,21 +83,21 @@ CREATE TABLE torcedores (
 ```
 
 
-## ? Funcionamento
+## ‚úè Funcionamento
 
 O projeto le 2 tipos de arquivos (xlsx) e (xml)!
 
-Se no Upload do Formul·rio for adicionado um arquivo (xlsx) o banco de dados RESETA e SOBRESCREVE os dados salvos no banco pelos dados da nova planilha.
-O processo ocorre dessa forma porque teoricamente a planilha dos dados sÛ seria usada 1 vez.
+Se no Upload do Formul√°rio for adicionado um arquivo (xlsx) o banco de dados RESETA e SOBRESCREVE os dados salvos no banco pelos dados da nova planilha.
+O processo ocorre dessa forma porque teoricamente a planilha dos dados s√≥ seria usada 1 vez.
 
 Apenas para migrar os dados de um ambiente local para um ambiente remoto.
 
-Se no Upload do Formul·rio for adicionado um arquivo (xml) o software trata ele como uma atualizaÁ„o e atualizar· os dados do banco
+Se no Upload do Formul√°rio for adicionado um arquivo (xml) o software trata ele como uma atualiza√ß√£o e atualizar√° os dados do banco
 fazendo um INSERT ou UPDATE na tabela dependendo da existencia ou nao desse dado no banco.
 
-Se por acaso algum desses dados estiver em falta no banco È possivel adiciona-los a um documento xml no mesmo formato dos DOCS DE EXEMPLO e adicionar as informaÁıes
+Se por acaso algum desses dados estiver em falta no banco √© possivel adiciona-los a um documento xml no mesmo formato dos DOCS DE EXEMPLO e adicionar as informa√ß√µes
 
-O sistema interpretar· o Numero do Documento daquele usuario e Atualizar· os dados dele no banco com os que vierem desse novo arquivo!
+O sistema interpretar√° o Numero do Documento daquele usuario e Atualizar√° os dados dele no banco com os que vierem desse novo arquivo!
 
 ---
-Baseado no README de - [Armstrong Loh„ns](https://gist.github.com/lohhans) ?
+Baseado no README de - [Armstrong Loh√£ns](https://gist.github.com/lohhans) ?
